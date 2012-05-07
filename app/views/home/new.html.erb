@@ -1,0 +1,10 @@
+<h1>Create Your Account in 3 Steps</h1>
+
+<p style="color:green;"><%= flash[:notice] %></p>
+<p style="color:red;"><%= flash[:alert] %></p>
+
+<%= @user.errors.full_messages.each do |msg| %>
+	<<li><%= msg %></li>
+	<%end %>
+	
+	<%= render "form" %>

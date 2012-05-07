@@ -1,0 +1,20 @@
+<h1>Welcome to PlugIn!</h1>
+
+<p style="color:green;"><%= flash[:notice] %></p>
+<p style="color:red;"><%= flash[:alert] %></p>
+
+<%= link_to "Add a new user", new_user_url %>
+
+<ul>
+<% @users.each do |line| %>
+  <li>
+    <%= link_to user.name, user_url(user.id) %>
+  </li>
+<% end %>
+</ul>
+	
+	<a href="/users/<%= user.id %>/edit">Edit</a> 
+	
+	<%= link_to "Delete User", "/users/#{user.id}", :method => :delete, :confirm => "Are you sure you want to delete this user?"%>
+	<% end %>
+	
